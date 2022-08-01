@@ -3,10 +3,11 @@ import styled from "@emotion/styled";
 export const Head = styled.div`
   width: 1920px;
   height: 92px;
-  background: rgba(13, 17, 23, 0.8);
+  background: #0d1117;
   display: flex;
   justify-content: space-around;
   padding: 15px 0px;
+  z-index: 1;
 `;
 
 export const Lists = styled.div`
@@ -15,11 +16,10 @@ export const Lists = styled.div`
   margin-top: 15px;
   padding: 5px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 `;
 
 export const options = styled.div`
-  width: 100px;
   height: 32px;
   font-weight: 700;
   font-size: 16px;
