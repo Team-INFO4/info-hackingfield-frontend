@@ -4,22 +4,16 @@ import MainComponent from "../components/Main";
 
 const main = () => {
   return (
-    <Container>
+    <Wrapper>
       <MainComponent />
-    </Container>
+    </Wrapper>
   );
 };
 
-const Container = styled.div`
+const Wrapper = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  background: url("/images/Banner img_01.png");
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  height: 3000px;
 `;
 
 export default main;
