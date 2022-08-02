@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const styledDiv = styled.div`
   font-family: "Noto Sans KR", sans-serif;
-  color: #ffffff;
-  font-weight: normal;
+  color: white;
+  background-color: #333333;
+  font-weight: 300;
 
   h1 {
     font-size: 32px;
@@ -27,7 +28,7 @@ export const Wrapper = styled.div`
 
 export const textDiv = styled.div`
   position: relative;
-  top: 300px;
+  top: 340px;
   left: 480px;
   width: 500px;
   height: 600px;
@@ -35,7 +36,7 @@ export const textDiv = styled.div`
 `;
 
 export const titleDiv = styled.div`
-  width: 230px;
+  width: 260px;
   height: 80px;
   position: relative;
   top: 0px;
@@ -44,10 +45,11 @@ export const titleDiv = styled.div`
 
   h1 {
     font-weight: 700;
+    margin: 10px;
   }
 
   h2 {
-    font-weight: 400;
+    font-weight: 200;
   }
 `;
 
@@ -61,19 +63,42 @@ export const Bar = styled.div`
   background-color: white;
 `;
 
+export const xBar1 = styled.div`
+  position: absolute;
+  top: 160px;
+  left: 45%;
+  width: 43px;
+  height: 1px;
+  border: 1px solid white;
+  transform: rotate(-45deg);
+  background-color: white;
+`;
+
+export const xBar2 = styled.div`
+  position: absolute;
+  top: 160px;
+  left: 45%;
+  width: 43px;
+  height: 1px;
+  border: 1px solid white;
+  transform: rotate(45deg);
+  background-color: white;
+`;
+
 export const bodyDiv = styled.div`
   width: 420px;
   height: 100px;
   top: 112px;
   text-align: center;
   margin: 0 auto;
+  margin-top: 25px;
   position: relative;
 `;
 
 export const iconBox = styled.div`
   width: 420px;
   height: 130px;
-  top: 200px;
+  top: 160px;
   display: flex;
   text-align: center;
   margin: 0 auto;
@@ -85,10 +110,31 @@ export const iconBox = styled.div`
   }
 `;
 
+export const iconBox2 = styled.div`
+  width: 420px;
+  height: 130px;
+  top: 160px;
+
+  text-align: left;
+  margin: 0 auto;
+  position: relative;
+
+  p {
+    width: 300px;
+    display: inline-block;
+    position: absolute;
+    top: -3px;
+    left: 100px;
+    font-size: 16px;
+    font-weight: 200;
+  }
+`;
+
 export const jpBox = styled.div`
   width: 100px;
   height: 80px;
   left: 50px;
+  margin: 0px;
   position: relative;
 `;
 
@@ -96,6 +142,23 @@ export const jhBox = styled.div`
   width: 100px;
   height: 80px;
   left: 180px;
+  margin: 0px;
+  position: relative;
+`;
+
+export const jpBox2 = styled.div`
+  width: 100px;
+  height: 80px;
+  left: 50px;
+  margin: 0px;
+  position: relative;
+`;
+
+export const jhBox2 = styled.div`
+  width: 100px;
+  height: 80px;
+  left: 50px;
+  margin-top: 20px;
   position: relative;
 `;
 
@@ -113,7 +176,7 @@ export const BgContainer1 = styled.div`
 
 export const BgContainer2 = styled.div`
   position: relative;
-  top: 1080px;
+  top: 1200px;
   background: url("/images/Banner img_02.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -124,7 +187,7 @@ export const BgContainer2 = styled.div`
 
 export const BgContainer3 = styled.div`
   position: relative;
-  top: 1080px;
+  top: 1320px;
   background: url("/images/Banner img_03.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -151,6 +214,7 @@ export const Rcircle1 = styled.div`
   height: 600px;
   right: -20%;
   border: 2px dashed #1cb56d;
+  opacity: 0.5;
   bottom: 280px;
   background-size: 40px 10px;
   transform: rotate(-30deg);
@@ -179,6 +243,7 @@ export const Rcircle3 = styled.div`
   height: 600px;
   right: -20%;
   border: 2px dashed #1cb56d;
+  opacity: 0.5;
   bottom: -100px;
   background-size: 40px 10px;
   transform: rotate(-30deg);

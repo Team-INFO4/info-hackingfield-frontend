@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   position: absolute;
   width: 100vw;
   height: 3000px;
+  background-color: #333333;
 `;
 
 export default main;
