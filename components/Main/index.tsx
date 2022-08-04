@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./styles";
 import Image from "next/image";
+import Login from "./Login";
 
 // h1 32px;  h2 20px; h3 18px;
 
@@ -47,6 +48,7 @@ const MainComponent = () => {
             </S.jhBox>
           </S.iconBox>
         </S.textDiv>
+        <Login />
       </S.BgContainer1>
       <S.BgContainer2>
         <S.textDiv>

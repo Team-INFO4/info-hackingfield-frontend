@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
 export const textDiv = styled.div`
   position: relative;
   top: 340px;
-  left: 480px;
+  left: 430px;
   width: 500px;
   height: 600px;
   // background-color: black;
@@ -114,7 +114,6 @@ export const iconBox2 = styled.div`
   width: 420px;
   height: 130px;
   top: 160px;
-
   text-align: left;
   margin: 0 auto;
   position: relative;
@@ -249,4 +248,29 @@ export const Rcircle3 = styled.div`
   transform: rotate(-30deg);
   border-radius: 50%;
   overflow: hidden;
+`;
+
+/*
+  Login style
+*/
+
+export const BackDiv = styled.div`
+  z-index: 2;
+  top: 0px;
+  width: 544px;
+  height: 1080px;
+  position: fixed;
+  right: 370px;
+  background: rgba(13, 17, 23, 0.8);
+`;
+
+export const LogoBox = styled.div`
+  position: absolute;
+  top: 300px;
+  width: 450px;
+  height: 130px;
+  left: 45px;
+  background-image: url("/images/Logo.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 `;

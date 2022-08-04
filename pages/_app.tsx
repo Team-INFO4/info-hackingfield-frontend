@@ -4,7 +4,6 @@ import { RecoilRoot } from "recoil";
 import Layout from "../components/Common/Layout";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  console.log("PP: ", pageProps);
   return pageProps.pathname === "/" ||
     pageProps.pathname === "/login" ||
     pageProps.pathname === "/register" ? (
