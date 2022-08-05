@@ -268,6 +268,11 @@ export const BackDiv = styled.div`
   position: fixed;
   right: 370px;
   background: rgba(13, 17, 23, 0.8);
+
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+  }
   @media screen and (max-width: 1780px) {
     right: 20%;
   }
@@ -288,4 +293,51 @@ export const LogoBox = styled.div`
   background-image: url("/images/Logo.svg");
   background-repeat: no-repeat;
   background-size: contain;
+`;
+
+export const styledInput = styled.input`
+  position: relative;
+  padding-left: 28px;
+  width: 480px;
+  height: 60px;
+  top: 457px;
+  left: 32px;
+  margin-top: 20px;
+  background: #161b22;
+  border: 1px solid #161b22;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #555555;
+  &:focus {
+    outline: 2px solid #2da16b;
+  }
+`;
+
+export const styledButton = styled.button`
+  position: absolute;
+  width: 480px;
+  height: 68px;
+  left: 32px;
+  top: 650px;
+  background: #555555;
+  border: 1px solid #555555;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #bbbbbb;
+  &:hover {
+    background-color: #2da16b;
+    transition: 0.5s;
+    color: #ffffff;
+  }
+`;
+
+export const textBox = styled.div`
+  width: 450px;
+  height: 50px;
+  left: 48px;
+
+  display: flex;
+  position: absolute;
+  bottom: 28%;
+  justify-content: space-between;
 `;
