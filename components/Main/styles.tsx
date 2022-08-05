@@ -29,10 +29,16 @@ export const Wrapper = styled.div`
 export const textDiv = styled.div`
   position: relative;
   top: 340px;
-  left: 430px;
+  left: 22%;
   width: 500px;
   height: 600px;
-  // background-color: black;
+
+  @media screen and (max-width: 1780px) {
+    left: 15%;
+  }
+  @media screen and (max-width: 1660px) {
+    left: 8%;
+  }
 `;
 
 export const titleDiv = styled.div`
@@ -211,7 +217,7 @@ export const Rcircle1 = styled.div`
   z-index: 1;
   width: 1200px;
   height: 600px;
-  right: -20%;
+  right: -8%;
   border: 2px dashed #1cb56d;
   opacity: 0.5;
   bottom: 280px;
@@ -226,7 +232,7 @@ export const Rcircle2 = styled.div`
   z-index: 1;
   width: 1200px;
   height: 600px;
-  right: -20%;
+  right: -8%;
   border: 1px solid #1cb56d;
   bottom: 100px;
   background-size: 40px 10px;
@@ -240,7 +246,7 @@ export const Rcircle3 = styled.div`
   z-index: 1;
   width: 1200px;
   height: 600px;
-  right: -20%;
+  right: -8%;
   border: 2px dashed #1cb56d;
   opacity: 0.5;
   bottom: -100px;
@@ -262,6 +268,15 @@ export const BackDiv = styled.div`
   position: fixed;
   right: 370px;
   background: rgba(13, 17, 23, 0.8);
+  @media screen and (max-width: 1780px) {
+    right: 20%;
+  }
+  @media screen and (max-width: 1660px) {
+    right: 5%;
+  }
+  @media screen and (max-width: 1190px) {
+    left: 600px;
+  }
 `;
 
 export const LogoBox = styled.div`
