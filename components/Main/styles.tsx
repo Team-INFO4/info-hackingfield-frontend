@@ -39,6 +39,9 @@ export const textDiv = styled.div`
   @media screen and (max-width: 1660px) {
     left: 8%;
   }
+  @media screen and (max-height: 800px) {
+    top: 220px;
+  }
 `;
 
 export const titleDiv = styled.div`
@@ -210,6 +213,12 @@ export const circle1 = styled.div`
   height: 624px;
   border: 1px solid #1cb56d;
   border-radius: 50%;
+
+  @media screen and (max-height: 800px) {
+    width: 550px;
+    height: 550px;
+    left: 80px;
+  }
 `;
 
 export const Rcircle1 = styled.div`
@@ -225,6 +234,10 @@ export const Rcircle1 = styled.div`
   transform: rotate(-30deg);
   border-radius: 50%;
   overflow: hidden;
+  @media screen and (max-height: 800px) {
+    width: 900px;
+    height: 400px;
+  }
 `;
 
 export const Rcircle2 = styled.div`
@@ -239,6 +252,10 @@ export const Rcircle2 = styled.div`
   transform: rotate(-30deg);
   border-radius: 50%;
   overflow: hidden;
+  @media screen and (max-height: 800px) {
+    width: 900px;
+    height: 400px;
+  }
 `;
 
 export const Rcircle3 = styled.div`
@@ -254,6 +271,10 @@ export const Rcircle3 = styled.div`
   transform: rotate(-30deg);
   border-radius: 50%;
   overflow: hidden;
+  @media screen and (max-height: 800px) {
+    width: 900px;
+    height: 400px;
+  }
 `;
 
 /*
@@ -293,6 +314,9 @@ export const LogoBox = styled.div`
   background-image: url("/images/Logo.svg");
   background-repeat: no-repeat;
   background-size: contain;
+  @media screen and (max-height: 800px) {
+    top: 200px;
+  }
 `;
 
 export const styledInput = styled.input`
@@ -311,6 +335,9 @@ export const styledInput = styled.input`
   &:focus {
     outline: 2px solid #2da16b;
   }
+  @media screen and (max-height: 800px) {
+    top: 357px;
+  }
 `;
 
 export const styledButton = styled.button`
@@ -324,6 +351,9 @@ export const styledButton = styled.button`
   border-radius: 8px;
   font-size: 15px;
   color: #bbbbbb;
+  @media screen and (max-height: 800px) {
+    top: 550px;
+  }
 `;
 
 export const styledButtonEnable = styled.button`
@@ -344,15 +374,20 @@ export const styledButtonEnable = styled.button`
     color: #ffffff;
     cursor: pointer;
   }
+  @media screen and (max-height: 800px) {
+    top: 550px;
+  }
 `;
 
 export const textBox = styled.div`
   width: 450px;
   height: 50px;
   left: 48px;
-
   display: flex;
   position: absolute;
   bottom: 28%;
   justify-content: space-between;
+  @media screen and (max-height: 800px) {
+    top: 630px;
+  }
 `;
