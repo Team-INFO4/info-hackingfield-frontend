@@ -324,10 +324,25 @@ export const styledButton = styled.button`
   border-radius: 8px;
   font-size: 15px;
   color: #bbbbbb;
+`;
+
+export const styledButtonEnable = styled.button`
+  position: absolute;
+  width: 480px;
+  height: 68px;
+  left: 32px;
+  top: 650px;
+  background: #1cb56d;
+  border: 1px solid #1cb56d;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.5s;
+  color: #ffffff;
   &:hover {
     background-color: #2da16b;
     transition: 0.5s;
     color: #ffffff;
+    cursor: pointer;
   }
 `;
 
