@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
 
 export const textDiv = styled.div`
   position: relative;
-  top: 340px;
+  top: 31vh;
   left: 22%;
   width: 500px;
   height: 600px;
@@ -184,7 +184,7 @@ export const BgContainer1 = styled.div`
 
 export const BgContainer2 = styled.div`
   position: relative;
-  top: 1200px;
+  top: 115vh;
   background: url("/images/Banner img_02.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -195,7 +195,7 @@ export const BgContainer2 = styled.div`
 
 export const BgContainer3 = styled.div`
   position: relative;
-  top: 1320px;
+  top: 130vh;
   background: url("/images/Banner img_03.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -207,74 +207,57 @@ export const BgContainer3 = styled.div`
 export const circle1 = styled.div`
   position: fixed;
   z-index: 1;
-  top: -376px;
-  left: 128px;
-  width: 624px;
-  height: 624px;
+  // 1080 => -376px
+  top: -35vh;
+  left: 12vh;
+  width: 58vh;
+  height: 58vh;
   border: 1px solid #1cb56d;
   border-radius: 50%;
-
-  @media screen and (max-height: 800px) {
-    width: 550px;
-    height: 550px;
-    left: 80px;
-  }
 `;
 
 export const Rcircle1 = styled.div`
   position: fixed;
   z-index: 1;
-  width: 1200px;
-  height: 600px;
+  width: 63vw;
+  height: 55vh;
   right: -8%;
   border: 2px dashed #1cb56d;
-  opacity: 0.5;
-  bottom: 280px;
-  background-size: 40px 10px;
+  opacity: 0.3;
+  bottom: 26vh;
+
   transform: rotate(-30deg);
   border-radius: 50%;
   overflow: hidden;
-  @media screen and (max-height: 800px) {
-    width: 900px;
-    height: 400px;
-  }
 `;
 
 export const Rcircle2 = styled.div`
   position: fixed;
   z-index: 1;
-  width: 1200px;
-  height: 600px;
+  width: 63vw;
+  height: 55vh;
   right: -8%;
   border: 1px solid #1cb56d;
-  bottom: 100px;
-  background-size: 40px 10px;
+  bottom: 9vh;
+
   transform: rotate(-30deg);
   border-radius: 50%;
   overflow: hidden;
-  @media screen and (max-height: 800px) {
-    width: 900px;
-    height: 400px;
-  }
 `;
 
 export const Rcircle3 = styled.div`
   position: fixed;
   z-index: 1;
-  width: 1200px;
-  height: 600px;
+  width: 63vw;
+  height: 55vh;
   right: -8%;
   border: 2px dashed #1cb56d;
-  opacity: 0.5;
-  bottom: -100px;
-  background-size: 40px 10px;
+  opacity: 0.3;
+  bottom: -9vh;
+
   transform: rotate(-30deg);
   border-radius: 50%;
   overflow: hidden;
-  @media screen and (max-height: 800px) {
-    width: 900px;
-    height: 400px;
-  }
 `;
 
 /*
@@ -284,48 +267,41 @@ export const Rcircle3 = styled.div`
 export const BackDiv = styled.div`
   z-index: 2;
   top: 0px;
-  width: 544px;
+  width: 29vw;
   height: 1080px;
   position: fixed;
-  right: 370px;
+  right: 19vw;
   background: rgba(13, 17, 23, 0.8);
 
   h3 {
     font-size: 16px;
     font-weight: 500;
   }
-  @media screen and (max-width: 1780px) {
-    right: 20%;
-  }
-  @media screen and (max-width: 1660px) {
-    right: 5%;
-  }
-  @media screen and (max-width: 1190px) {
-    left: 600px;
-  }
+
+  /* @media screen and (max-width: 1660px) {
+    width: 30vw;
+  } */
 `;
 
 export const LogoBox = styled.div`
   position: absolute;
-  top: 300px;
-  width: 450px;
+  //1080 => 300px
+  top: 28vh;
+  width: 23.5vw;
   height: 130px;
-  left: 45px;
+  left: 2.5vw;
   background-image: url("/images/Logo.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  @media screen and (max-height: 800px) {
-    top: 200px;
-  }
 `;
 
 export const styledInput = styled.input`
   position: relative;
   padding-left: 28px;
-  width: 480px;
+  width: 25vw;
   height: 60px;
-  top: 457px;
-  left: 32px;
+  top: 42.5vh;
+  left: 1.5vw;
   margin-top: 20px;
   background: #161b22;
   border: 1px solid #161b22;
@@ -335,36 +311,39 @@ export const styledInput = styled.input`
   &:focus {
     outline: 2px solid #2da16b;
   }
-  @media screen and (max-height: 800px) {
-    top: 357px;
+  @media screen and (max-height: 950px) {
+    height: 50px;
   }
 `;
 
 export const styledButton = styled.button`
   position: absolute;
-  width: 480px;
+  width: 25vw;
   height: 68px;
-  left: 32px;
-  top: 650px;
+  left: 1.5vw;
+  top: 57.8vh;
   background: #555555;
   border: 1px solid #555555;
+  margin-top: 25px;
   border-radius: 8px;
   font-size: 15px;
   color: #bbbbbb;
-  @media screen and (max-height: 800px) {
-    top: 550px;
+  @media screen and (max-height: 950px) {
+    height: 60px;
+    margin-top: 42px;
   }
 `;
 
 export const styledButtonEnable = styled.button`
   position: absolute;
-  width: 480px;
+  width: 25vw;
   height: 68px;
-  left: 32px;
-  top: 650px;
+  left: 1.5vw;
+  top: 57.8vh;
   background: #1cb56d;
   border: 1px solid #1cb56d;
   border-radius: 8px;
+  margin-top: 25px;
   font-size: 15px;
   transition: 0.5s;
   color: #ffffff;
@@ -374,20 +353,20 @@ export const styledButtonEnable = styled.button`
     color: #ffffff;
     cursor: pointer;
   }
-  @media screen and (max-height: 800px) {
-    top: 550px;
+  @media screen and (max-height: 950px) {
+    height: 60px;
+    margin-top: 42px;
   }
 `;
 
 export const textBox = styled.div`
-  width: 450px;
-  height: 50px;
-  left: 48px;
+  width: 23.5vw;
+  left: 2.5vw;
   display: flex;
   position: absolute;
-  bottom: 28%;
+  top: 68vh;
   justify-content: space-between;
-  @media screen and (max-height: 800px) {
-    top: 630px;
+  @media screen and (max-height: 950px) {
+    top: 73vh;
   }
 `;
