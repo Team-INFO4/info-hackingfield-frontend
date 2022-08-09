@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const styledDiv = styled.div`
@@ -368,5 +369,11 @@ export const textBox = styled.div`
   justify-content: space-between;
   @media screen and (max-height: 950px) {
     top: 73vh;
+  }
+`;
+
+export const styledLink = styled(Link)`
+  &:hover {
+    cursor: pointer;
   }
 `;
