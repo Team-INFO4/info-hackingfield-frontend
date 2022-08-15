@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import MainComponent from "../components/Main";
+import Login from "../components/Main/Login";
+import MainComponent from "../components/Main/MainComponent";
 
 const main = () => {
   return (
     <Wrapper>
       <MainComponent />
+      <Login />
     </Wrapper>
   );
 };

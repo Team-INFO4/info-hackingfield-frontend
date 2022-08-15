@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import MainComponent from "../../components/Main";
+import MainComponent from "../../components/Main/MainComponent";
 import Login from "../../components/Main/Login";
 
 const common = () => {

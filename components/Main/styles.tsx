@@ -365,10 +365,11 @@ export const textBox = styled.div`
   left: 2.5vw;
   display: flex;
   position: absolute;
-  top: 68vh;
+  color: #ffffff;
+  top: 67vh;
   justify-content: space-between;
   @media screen and (max-height: 950px) {
-    top: 73vh;
+    top: 70vh;
   }
   h3 {
     &:hover {
