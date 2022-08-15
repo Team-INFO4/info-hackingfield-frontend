@@ -370,10 +370,9 @@ export const textBox = styled.div`
   @media screen and (max-height: 950px) {
     top: 73vh;
   }
-`;
-
-export const styledLink = styled(Link)`
-  &:hover {
-    cursor: pointer;
+  h3 {
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;

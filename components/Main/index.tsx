@@ -48,7 +48,6 @@ const MainComponent = () => {
             </S.jhBox>
           </S.iconBox>
         </S.textDiv>
-        <Login />
       </S.BgContainer1>
       <S.BgContainer2>
         <S.textDiv>

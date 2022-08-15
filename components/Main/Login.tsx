@@ -43,9 +43,9 @@ const Login = () => {
 
       <S.textBox>
         <h3>비밀번호 찾기</h3>
-        <S.styledLink href="/signup/common" passHref>
+        <Link href="/signup/common" passHref>
           <h3>회원가입</h3>
-        </S.styledLink>
+        </Link>
       </S.textBox>
     </S.BackDiv>
   );
