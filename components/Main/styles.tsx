@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const styledDiv = styled.div`
   font-family: "Noto Sans KR", sans-serif;
@@ -265,23 +265,37 @@ export const Rcircle3 = styled.div`
   Login style
 */
 
+const divFade = keyframes`
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity : 1;
+  }
+  
+`;
+
 export const BackDiv = styled.div`
   z-index: 2;
   top: 0px;
   width: 29vw;
-  height: 1080px;
+  height: 100vh;
   position: fixed;
   right: 19vw;
   background: rgba(13, 17, 23, 0.8);
-
+  animation: ${divFade} 2s;
+  color: white;
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    top: 48px;
+    left: 42%;
+  }
   h3 {
     font-size: 16px;
     font-weight: 500;
   }
-
-  /* @media screen and (max-width: 1660px) {
-    width: 30vw;
-  } */
 `;
 
 export const LogoBox = styled.div`
@@ -374,6 +388,23 @@ export const textBox = styled.div`
   h3 {
     &:hover {
       cursor: pointer;
+    }
+  }
+`;
+
+/*
+  Resister(회원가입) 스타일
+*/
+export const arrowBox = styled.div`
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 58px;
+  left: 36.5px;
+  .arrow {
+    color: white;
+    &:hover {
+      color: #1cb56d;
     }
   }
 `;

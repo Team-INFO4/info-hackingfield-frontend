@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import MainComponent from "../../components/Main/MainComponent";
 import Login from "../../components/Main/Login";
+import Resister_select from "../../components/Main/Resister_select";
 
 const common = () => {
   return (
     <Wrapper>
       <MainComponent />
+      <Resister_select />
     </Wrapper>
   );
 };
