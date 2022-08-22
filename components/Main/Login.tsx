@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import * as S from "./styles";
+import Link from "next/link";
+import styled from "styled-components";
 
 const Login = () => {
   const [id, setId] = useState("");
@@ -41,7 +43,9 @@ const Login = () => {
 
       <S.textBox>
         <h3>비밀번호 찾기</h3>
-        <h3>회원가입</h3>
+        <Link href="/signup/common" passHref>
+          <h3>회원가입</h3>
+        </Link>
       </S.textBox>
     </S.BackDiv>
   );

@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import Link from "next/link";
+import styled, { keyframes } from "styled-components";
 
 export const styledDiv = styled.div`
   font-family: "Noto Sans KR", sans-serif;
@@ -264,23 +265,40 @@ export const Rcircle3 = styled.div`
   Login style
 */
 
+const divFade = keyframes`
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity : 1;
+  }
+  
+`;
+
 export const BackDiv = styled.div`
   z-index: 2;
   top: 0px;
   width: 29vw;
-  height: 1080px;
+  height: 100vh;
   position: fixed;
   right: 19vw;
   background: rgba(13, 17, 23, 0.8);
-
+  animation: ${divFade} 2s;
+  color: white;
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    top: 48px;
+    left: 42%;
+  }
   h3 {
     font-size: 16px;
     font-weight: 500;
   }
-
-  /* @media screen and (max-width: 1660px) {
-    width: 30vw;
-  } */
+  @media screen and (max-width: 1200px) {
+    width: 348px;
+  }
 `;
 
 export const LogoBox = styled.div`
@@ -293,6 +311,9 @@ export const LogoBox = styled.div`
   background-image: url("/images/Logo.svg");
   background-repeat: no-repeat;
   background-size: contain;
+  @media screen and (max-width: 1200px) {
+    width: 282px;
+  }
 `;
 
 export const styledInput = styled.input`
@@ -311,6 +332,9 @@ export const styledInput = styled.input`
   &:focus {
     outline: 2px solid #2da16b;
   }
+  @media screen and (max-width: 1200px) {
+    width: 300px;
+  }
   @media screen and (max-height: 950px) {
     height: 50px;
   }
@@ -328,6 +352,9 @@ export const styledButton = styled.button`
   border-radius: 8px;
   font-size: 15px;
   color: #bbbbbb;
+  @media screen and (max-width: 1200px) {
+    width: 300px;
+  }
   @media screen and (max-height: 950px) {
     height: 60px;
     margin-top: 42px;
@@ -353,6 +380,9 @@ export const styledButtonEnable = styled.button`
     color: #ffffff;
     cursor: pointer;
   }
+  @media screen and (max-width: 1200px) {
+    width: 300px;
+  }
   @media screen and (max-height: 950px) {
     height: 60px;
     margin-top: 42px;
@@ -364,9 +394,178 @@ export const textBox = styled.div`
   left: 2.5vw;
   display: flex;
   position: absolute;
-  top: 68vh;
+  color: #ffffff;
+  top: 67vh;
   justify-content: space-between;
+  @media screen and (max-width: 1200px) {
+    width: 282px;
+  }
   @media screen and (max-height: 950px) {
-    top: 73vh;
+    top: 70vh;
+  }
+  h3 {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+`;
+
+/*
+  Resister(회원가입) 스타일
+*/
+export const arrowBox = styled.div`
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 58px;
+  left: 36.5px;
+  .arrow {
+    color: white;
+    &:hover {
+      color: #1cb56d;
+    }
+  }
+`;
+
+export const SelectDiv = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 27vw;
+  height: 260px;
+  background-color: red;
+  margin: 0 auto;
+  top: 36vh;
+  @media screen and (max-width: 1200px) {
+    width: 330px;
+  }
+`;
+
+export const userBox = styled.div`
+  position: relative;
+  width: 232px;
+  height: 232px;
+  background: #161b22;
+  border-radius: 26px;
+  &:hover {
+    background-color: #1e2329;
+    cursor: pointer;
+    .Icon {
+      filter: grayscale(0%) !important;
+    }
+    h3 {
+      opacity: 1;
+    }
+    p {
+      opacity: 1;
+    }
+  }
+
+  h3 {
+    position: relative;
+    font-weight: 500;
+    font-size: 18px;
+    top: 40px;
+    left: 38%;
+    opacity: 0.5;
+  }
+
+  p {
+    position: relative;
+    font-weight: 500;
+    font-size: 18px;
+    top: 35px;
+    left: 38%;
+    opacity: 0.5;
+  }
+  @media screen and (max-width: 1800px) {
+    width: 200px;
+    height: 200px;
+    h3 {
+      top: 30px;
+      left: 76px;
+    }
+    p {
+      top: 11px;
+    }
+  }
+  @media screen and (max-width: 1600px) {
+    width: 180px;
+    height: 180px;
+    h3 {
+      top: 20px;
+      left: 66px;
+    }
+    p {
+      top: -10px;
+      left: 36%;
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    width: 150px;
+    height: 150px;
+    h3 {
+      top: 15px;
+      left: 53px;
+      font-size: 16px;
+    }
+    p {
+      top: -25px;
+      font-size: 16px;
+    }
+  }
+`;
+
+export const userImage = styled.div`
+  width: 150px;
+  height: 112px;
+  position: relative;
+  top: 40px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/images/Icon_user.svg");
+  filter: grayscale(60%);
+
+  @media screen and (max-width: 1800px) {
+    top: 30px;
+    width: 140px;
+    height: 102px;
+  }
+  @media screen and (max-width: 1600px) {
+    top: 20px;
+    width: 130px;
+    height: 92px;
+  }
+  @media screen and (max-width: 1440px) {
+    top: 20px;
+    width: 120px;
+    height: 82px;
+  }
+`;
+
+export const teamImage = styled.div`
+  width: 180px;
+  height: 120px;
+  position: relative;
+  top: 40px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/images/Icon_Team.svg");
+  filter: grayscale(60%);
+
+  @media screen and (max-width: 1800px) {
+    top: 30px;
+    width: 170px;
+  }
+  @media screen and (max-width: 1600px) {
+    top: 20px;
+    width: 150px;
+  }
+  @media screen and (max-width: 1440px) {
+    top: 20px;
+    width: 130px;
   }
 `;
