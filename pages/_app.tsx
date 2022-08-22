@@ -6,7 +6,7 @@ import Layout from "../components/Common/Layout";
 const App = ({ Component, pageProps }: AppProps) => {
   return pageProps.pathname === "/" ||
     pageProps.pathname === "/login" ||
-    pageProps.pathname === "/register" ? (
+    pageProps.pathname === "/signup/common" ? (
     <RecoilRoot>
       <Component {...pageProps} />
     </RecoilRoot>
