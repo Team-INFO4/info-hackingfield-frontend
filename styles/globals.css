@@ -1,3 +1,6 @@
+@viewport {
+  width: device-width;
+}
 html,
 body {
   height: 100%;
@@ -39,7 +42,7 @@ a {
 
 * {
   box-sizing: border-box;
-  font-family: "Poppins";
+  font-family: "Noto Sans KR";
 }
 
 .flex {
