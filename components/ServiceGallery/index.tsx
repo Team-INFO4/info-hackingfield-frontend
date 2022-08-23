@@ -4,12 +4,14 @@ import Gallery from "./Gallery";
 import LeftArrow from "../../public/assets/LeftArrow";
 import RightArrow from "../../public/assets/RightArrow";
 import Circle from "./Circle";
+import Header from "../Common/Header";
 
 const ServiceGallery: FC = (): JSX.Element => {
   const List = [1, 2, 3, 4];
 
   return (
     <S.HomeWrapper>
+      <Header />
       <Circle />
       <S.Title>서비스 갤러리</S.Title>
       <S.Selected />
