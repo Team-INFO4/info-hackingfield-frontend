@@ -434,85 +434,98 @@ export const SelectDiv = styled.div`
   align-items: center;
   width: 27vw;
   height: 260px;
-  background-color: red;
   margin: 0 auto;
   top: 36vh;
   @media screen and (max-width: 1200px) {
     width: 330px;
   }
-`;
 
-export const userBox = styled.div`
-  position: relative;
-  width: 232px;
-  height: 232px;
-  background: #161b22;
-  border-radius: 26px;
-  &:hover {
-    background-color: #1e2329;
-    cursor: pointer;
+  .btn {
+    position: relative;
+    width: 232px;
+    height: 232px;
+    background-color: #161b22;
+    border-radius: 26px;
+    &:hover {
+      background-color: #1e2329;
+      cursor: pointer;
+      .Icon {
+        filter: grayscale(0%) !important;
+      }
+      h3 {
+        opacity: 1;
+      }
+      p {
+        opacity: 1;
+      }
+    }
+
+    h3 {
+      position: relative;
+      font-weight: 500;
+      font-size: 18px;
+      top: 40px;
+      left: 38%;
+      opacity: 0.5;
+    }
+
+    p {
+      position: relative;
+      font-weight: 500;
+      font-size: 18px;
+      top: 35px;
+      left: 38%;
+      opacity: 0.5;
+    }
+    @media screen and (max-width: 1800px) {
+      width: 200px;
+      height: 200px;
+      h3 {
+        top: 30px;
+        left: 76px;
+      }
+      p {
+        top: 11px;
+      }
+    }
+    @media screen and (max-width: 1600px) {
+      width: 180px;
+      height: 180px;
+      h3 {
+        top: 20px;
+        left: 66px;
+      }
+      p {
+        top: -10px;
+        left: 36%;
+      }
+    }
+    @media screen and (max-width: 1440px) {
+      width: 150px;
+      height: 150px;
+      h3 {
+        top: 15px;
+        left: 53px;
+        font-size: 16px;
+      }
+      p {
+        top: -25px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .btn.active {
+    background-color: #1cb56d;
+    h3 {
+      opacity: 1;
+    }
+    p {
+      opacity: 1;
+    }
     .Icon {
       filter: grayscale(0%) !important;
-    }
-    h3 {
-      opacity: 1;
-    }
-    p {
-      opacity: 1;
-    }
-  }
-
-  h3 {
-    position: relative;
-    font-weight: 500;
-    font-size: 18px;
-    top: 40px;
-    left: 38%;
-    opacity: 0.5;
-  }
-
-  p {
-    position: relative;
-    font-weight: 500;
-    font-size: 18px;
-    top: 35px;
-    left: 38%;
-    opacity: 0.5;
-  }
-  @media screen and (max-width: 1800px) {
-    width: 200px;
-    height: 200px;
-    h3 {
-      top: 30px;
-      left: 76px;
-    }
-    p {
-      top: 11px;
-    }
-  }
-  @media screen and (max-width: 1600px) {
-    width: 180px;
-    height: 180px;
-    h3 {
-      top: 20px;
-      left: 66px;
-    }
-    p {
-      top: -10px;
-      left: 36%;
-    }
-  }
-  @media screen and (max-width: 1440px) {
-    width: 150px;
-    height: 150px;
-    h3 {
-      top: 15px;
-      left: 53px;
-      font-size: 16px;
-    }
-    p {
-      top: -25px;
-      font-size: 16px;
+      opacity: 1 !important;
     }
   }
 `;
