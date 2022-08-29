@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import * as S from "./styles";
 import Gallery from "./Gallery";
+import Bottom from "../Common/Bottom";
 import LeftArrow from "../../public/assets/LeftArrow";
 import RightArrow from "../../public/assets/RightArrow";
 import Circle from "./Circle";
@@ -39,6 +40,7 @@ const ServiceGallery: FC = (): JSX.Element => {
           <RightArrow />
         </S.PageNumberDiv>
       </S.GalleryBox>
+      <Bottom />
     </S.HomeWrapper>
   );
 };
