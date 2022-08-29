@@ -58,6 +58,7 @@ export const Gallery = styled.div`
   margin-bottom: 32px;
   background: #161b22;
   border-radius: 16px;
+  cursor: pointer;
 `;
 
 export const Name = styled.div`
