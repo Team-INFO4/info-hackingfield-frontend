@@ -46,8 +46,18 @@ const NextButtonEnable = styled(S.styledButtonEnable)`
 
 const Resister_select = () => {
   const [selectCategory, setSelectCategory] = useState("");
-  const [user, setUser] = useState("#555555");
-  const [team, setTeam] = useState("#555555");
+  const [user, setUser] = useState(false);
+  const [team, setTeam] = useState(false);
+
+  const onClick = () => {
+    console.log(user, " & ", team);
+    if (user) {
+      Router.push("/signup/user");
+    } else {
+      Router.push("/signup/team");
+    }
+  };
+
   return (
     <S.BackDiv>
       <S.arrowBox>
@@ -61,21 +71,29 @@ const Resister_select = () => {
       <S.SelectDiv>
         <div
           className={`btn ${selectCategory === "curr" ? "active" : ""}`}
-          onClick={() => setSelectCategory("curr")}
+          onClick={() => {
+            setSelectCategory("curr");
+            setTeam(false);
+            setUser(true);
+          }}
         >
           <S.userImage className="Icon" />
           <h3>USER</h3>
         </div>
         <div
           className={`btn ${selectCategory === "prev" ? "active" : ""}`}
-          onClick={() => setSelectCategory("prev")}
+          onClick={() => {
+            setSelectCategory("prev");
+            setUser(false);
+            setTeam(true);
+          }}
         >
           <S.teamImage className="Icon" />
           <p>TEAM</p>
         </div>
       </S.SelectDiv>
       {selectCategory ? (
-        <NextButtonEnable>다음</NextButtonEnable>
+        <NextButtonEnable onClick={onClick}>다음</NextButtonEnable>
       ) : (
         <NextButton>다음</NextButton>
       )}
