@@ -1,6 +1,6 @@
 import { FC } from "react";
-import Home from "../components/Home";
 import styled from "@emotion/styled";
+import ServiceGallery from "../components/ServiceGallery";
 
 const HomePageContainer = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ const HomePageContainer = styled.div`
 const HomePage: FC = (): JSX.Element => {
   return (
     <HomePageContainer>
-      <Home />
+      <ServiceGallery />
     </HomePageContainer>
   );
 };
