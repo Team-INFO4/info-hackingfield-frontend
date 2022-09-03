@@ -582,3 +582,32 @@ export const teamImage = styled.div`
     width: 130px;
   }
 `;
+
+/* 
+  이용약관
+  */
+export const TitleBox = styled.div`
+  width: 250px;
+  height: 40px;
+  position: relative;
+  left: 21%;
+  @media screen and (max-width: 1800px) {
+    left: 19%;
+  }
+  @media screen and (max-width: 1600px) {
+    left: 16%;
+  }
+  @media screen and (max-width: 1440px) {
+    left: 12%;
+  }
+`;
+
+export const scrollBox = styled.div`
+  position: relative;
+  width: 100%;
+  height: 50%;
+  top: 20%;
+  background-color: red;
+  font-size: 16px;
+  font-weight: 400;
+`;

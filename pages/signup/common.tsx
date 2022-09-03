@@ -13,12 +13,6 @@ const common = () => {
   );
 };
 
-common.getInitialProps = async (ctx: { pathname: any }) => {
-  const pathname = ctx.pathname;
-
-  return { pathname };
-};
-
 const Wrapper = styled.div`
   position: absolute;
   width: 100vw;
