@@ -590,15 +590,15 @@ export const TitleBox = styled.div`
   width: 250px;
   height: 40px;
   position: relative;
-  left: 21%;
+  left: 20%;
   @media screen and (max-width: 1800px) {
-    left: 19%;
+    left: 18%;
   }
   @media screen and (max-width: 1600px) {
-    left: 16%;
+    left: 15%;
   }
   @media screen and (max-width: 1440px) {
-    left: 12%;
+    left: 11%;
   }
 `;
 
@@ -606,8 +606,24 @@ export const scrollBox = styled.div`
   position: relative;
   width: 100%;
   height: 50%;
-  top: 20%;
-  background-color: red;
-  font-size: 16px;
+  top: 18%;
+  color: #bbbbbb;
+  font-size: 18px;
   font-weight: 400;
+  div {
+    width: 95%;
+    height: 19vh;
+    background-color: #161b22;
+    border-radius: 4px;
+    padding: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  h3 {
+    text-align: right;
+    margin-right: 25px;
+  }
+  @media screen and (max-width: 1440px) {
+    font-size: 16px;
+  }
 `;
