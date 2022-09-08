@@ -425,6 +425,7 @@ export const arrowBox = styled.div`
       color: #1cb56d;
     }
   }
+  cursor: pointer;
 `;
 
 export const SelectDiv = styled.div`
@@ -611,6 +612,7 @@ export const scrollBox = styled.div`
   font-size: 18px;
   font-weight: 400;
   div {
+    margin-top: 10px;
     width: 95%;
     height: 19vh;
     background-color: #161b22;
@@ -618,12 +620,35 @@ export const scrollBox = styled.div`
     padding: 10px;
     overflow: scroll;
     overflow-x: hidden;
+    font-size: 15px;
   }
   h3 {
-    text-align: right;
-    margin-right: 25px;
+    position: relative;
+    margin: 0 25px 0 10px;
+    display: inline-block;
   }
   @media screen and (max-width: 1440px) {
     font-size: 16px;
+    div {
+      font-size: 13px;
+    }
+    h3 {
+      font-size: 14px;
+    }
+    .check {
+      size: 16px;
+    }
+  }
+  @media screen and (max-height: 1000px) {
+    top: 15%;
+  }
+
+  .btn {
+    width: 100%;
+    overflow: hidden;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 `;

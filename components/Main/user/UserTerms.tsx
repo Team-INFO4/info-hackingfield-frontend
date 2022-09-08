@@ -3,6 +3,7 @@ import * as S from "../styles";
 import styled from "styled-components";
 import { IoIosArrowBack } from "react-icons/io";
 import Router from "next/router";
+import { AiOutlineCheck } from "react-icons/ai";
 
 const NextButton = styled(S.styledButton)`
   width: 120px;
@@ -163,7 +164,10 @@ const Resister_select = () => {
             <br />
             출처: 네이버 회원가입
           </div>
-          <h3>개인정보 수집 및 이용에 동의합니다.</h3>
+          <div className={`btn ${selectCategory === "prev" ? "active" : ""}`}>
+            <AiOutlineCheck className="check" size="18px" />
+            <h3>개인정보 수집 및 이용에 동의합니다.</h3>
+          </div>
         </ul>
       </S.scrollBox>
 
