@@ -46,16 +46,14 @@ const NextButtonEnable = styled(S.styledButtonEnable)`
 `;
 
 const Resister_select = () => {
-  const [selectCategory, setSelectCategory] = useState("");
-  const [user, setUser] = useState(false);
-  const [team, setTeam] = useState(false);
+  const [terms1, setTerms1] = useState("");
+  const [terms2, setTerms2] = useState("");
 
   const onClick = () => {
-    console.log(user, " & ", team);
-    if (user) {
-      Router.push("/signup/user");
+    if (terms1 && terms2) {
+      Router.push("/signup/userInput");
     } else {
-      Router.push("/signup/team");
+      alert("약관에 동의해 주세요.");
     }
   };
 
@@ -118,7 +116,19 @@ const Resister_select = () => {
             <br />
             출처: 네이버 회원가입
           </div>
-          <h3>이용약관에 동의합니다.</h3>
+          <div
+            className={`btn ${terms1 === "active" ? "active" : ""}`}
+            onClick={() => {
+              if (terms1 === "active") {
+                setTerms1("prev");
+              } else {
+                setTerms1("active");
+              }
+            }}
+          >
+            <AiOutlineCheck className="check" size="18px" />
+            <h3>이용약관에 동의합니다.</h3>
+          </div>
           <li>개인정보 수집 빛 이용</li>
           <div>
             개인정보보호법에 따라 네이버에 회원가입 신청하시는 분께 수집하는
@@ -164,17 +174,28 @@ const Resister_select = () => {
             <br />
             출처: 네이버 회원가입
           </div>
-          <div className={`btn ${selectCategory === "prev" ? "active" : ""}`}>
+          <div
+            className={`btn ${terms2 === "active" ? "active" : ""}`}
+            onClick={() => {
+              if (terms2 === "active") {
+                setTerms2("prev");
+              } else {
+                setTerms2("active");
+              }
+            }}
+          >
             <AiOutlineCheck className="check" size="18px" />
             <h3>개인정보 수집 및 이용에 동의합니다.</h3>
           </div>
         </ul>
       </S.scrollBox>
 
-      {selectCategory ? (
+      {terms1 === "active" && terms2 === "active" ? (
         <NextButtonEnable onClick={onClick}>다음</NextButtonEnable>
       ) : (
-        <NextButton>다음</NextButton>
+        <NextButton onClick={() => alert("약관에 동의해 주세요.")}>
+          다음
+        </NextButton>
       )}
     </S.BackDiv>
   );

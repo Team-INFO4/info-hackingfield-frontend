@@ -285,12 +285,29 @@ export const BackDiv = styled.div`
   background: rgba(13, 17, 23, 0.8);
   animation: ${divFade} 2s;
   color: white;
+  .sul {
+    position: absolute;
+    top: 28vh;
+  }
+  li {
+    margin-left: 25px;
+    @media screen and (max-width: 1660px) {
+      margin-left: 13px;
+    }
+    @media screen and (max-width: 1440px) {
+      margin-left: 7px;
+    }
+  }
+
   h2 {
     font-size: 20px;
     font-weight: 500;
     position: absolute;
     top: 48px;
     left: 42%;
+    @media screen and (max-width: 1600px) {
+      top: 42px;
+    }
   }
   h3 {
     font-size: 16px;
@@ -423,6 +440,15 @@ export const arrowBox = styled.div`
     color: white;
     &:hover {
       color: #1cb56d;
+    }
+
+    @media screen and (max-width: 1600px) {
+      width: 35px;
+      height: 35px;
+    }
+    @media screen and (max-width: 1440px) {
+      width: 30px;
+      height: 30px;
     }
   }
   cursor: pointer;
@@ -593,13 +619,14 @@ export const TitleBox = styled.div`
   position: relative;
   left: 20%;
   @media screen and (max-width: 1800px) {
-    left: 18%;
+    left: 17%;
   }
   @media screen and (max-width: 1600px) {
-    left: 15%;
+    left: 14%;
   }
   @media screen and (max-width: 1440px) {
-    left: 11%;
+    left: 9%;
+    top: -3px;
   }
 `;
 
@@ -635,9 +662,6 @@ export const scrollBox = styled.div`
     h3 {
       font-size: 14px;
     }
-    .check {
-      size: 16px;
-    }
   }
   @media screen and (max-height: 1000px) {
     top: 15%;
@@ -646,9 +670,21 @@ export const scrollBox = styled.div`
   .btn {
     width: 100%;
     overflow: hidden;
+    background-color: rgba(13, 17, 23, 0);
     height: 40px;
     display: flex;
+    color: #555555;
     justify-content: flex-end;
     align-items: center;
+    &: hover {
+      cursor: pointer;
+    }
+  }
+
+  .btn.active {
+    color: #1cb56d;
+    h3 {
+      color: #ffffff;
+    }
   }
 `;
