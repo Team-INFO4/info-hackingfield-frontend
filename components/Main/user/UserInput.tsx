@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import * as S from "../styles";
 import Link from "next/link";
 import Router from "next/router";
 import { IoIosArrowBack } from "react-icons/io";
 import styled from "styled-components";
+import { constSelector } from "recoil";
 
 const IstyledInput = styled(S.styledInput)`
   top: 0px;
@@ -11,9 +12,14 @@ const IstyledInput = styled(S.styledInput)`
   margin: 8px 0 20px 0;
   @media screen and (max-width: 1660px) {
     left: -15px;
+    font-size: 14px;
+    padding-left: 15px;
   }
   @media screen and (max-width: 1440px) {
     left: -20px;
+  }
+  &:focus {
+    outline: 2px solid ${(props) => props.color || "#2da16b"};
   }
 `;
 
@@ -86,21 +92,54 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [confirm, setConfirm] = useState("");
+
+  // 유효성 검사
+  const [isEmail, setIsEmail] = useState<boolean>(false);
+  const [isPassword, setIsPassword] = useState<boolean>(false);
+  const [isPasswordConfirm, setIsPasswordConfirm] = useState<boolean>(false);
   let btnEnable = false;
-  const emailHandling = (e: any) => {
-    setEmail(e.target.value);
-  };
-  const pwdHandling = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPwd(e.target.value);
-  };
-  const confirmHandling = (e: any) => {
-    setConfirm(e.target.value);
+
+  const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const emailRegex = /[a-z0-9]{2,}@[a-z0-9-]{2,}.[a-z0-9]{2,}/i;
+
+    const emailCurrent = e.target.value;
+    setEmail(emailCurrent);
+
+    if (!emailRegex.test(emailCurrent)) {
+      setIsEmail(false);
+    } else {
+      setIsEmail(true);
+    }
   };
 
-  if (!email || !pwd) {
-    btnEnable = false;
-  } else {
+  const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const passwordRegex =
+      /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
+    const passwordCurrent = e.target.value;
+    setPwd(passwordCurrent);
+
+    if (!passwordRegex.test(passwordCurrent)) {
+      setIsPassword(false);
+    } else {
+      setIsPassword(true);
+    }
+  };
+
+  const onChangeConfirm = (e: any) => {
+    const passwordConfirmCurrent = e.target.value;
+    setConfirm(passwordConfirmCurrent);
+
+    if (pwd === passwordConfirmCurrent) {
+      setIsPasswordConfirm(true);
+    } else {
+      setIsPasswordConfirm(false);
+    }
+  };
+
+  if (isEmail && isPassword && isPasswordConfirm) {
     btnEnable = true;
+  } else {
+    btnEnable = false;
   }
 
   return (
@@ -115,31 +154,36 @@ const Login = () => {
       <ul className="sul">
         <li>이메일</li>
         <IstyledInput
+          color={`${isEmail ? "#2da16b" : "#ff0000"}`}
           type="text"
           placeholder="이메일 입력"
           name="email"
-          onChange={emailHandling}
+          onChange={onChangeEmail}
         />
         <li>비밀번호</li>
         <IstyledInput
+          color={`${isPassword ? "#2da16b" : "#ff0000"}`}
           type="password"
           placeholder="8~16자리의 영문/특수문자 조합으로 입력"
           name="password"
-          onChange={pwdHandling}
+          onChange={onChangePassword}
         />
         <li>비밀번호 확인</li>
         <IstyledInput
+          color={`${isPasswordConfirm ? "#2da16b" : "#ff0000"}`}
           type="password"
           placeholder="비밀번호 재입력"
-          name="password"
-          onChange={confirmHandling}
+          name="passwordconf"
+          onChange={onChangeConfirm}
         />
       </ul>
       <PrevButton>이전</PrevButton>
       {btnEnable ? (
         <NextButtonEnable>다음</NextButtonEnable>
       ) : (
-        <NextButton>다음</NextButton>
+        <NextButton onClick={() => alert("입력값을 다시 확인해 주세요!")}>
+          다음
+        </NextButton>
       )}
     </S.BackDiv>
   );

@@ -355,6 +355,16 @@ export const styledInput = styled.input`
   @media screen and (max-height: 950px) {
     height: 50px;
   }
+  :-webkit-autofill,
+  :-webkit-autofill:hover,
+  :-webkit-autofill:focus,
+  :-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-transition: background-color 9999s ease-out;
+    -webkit-box-shadow: 0 0 0px 1000px #161b22 inset !important;
+    box-shadow: 0 0 0px #161b22 inset !important;
+    -webkit-text-fill-color: #555555 !important;
+  }
 `;
 
 export const styledButton = styled.button`
