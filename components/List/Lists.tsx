@@ -1,20 +1,20 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import * as S from "./styles";
-import Gallery from "./Gallery";
 import Bottom from "../Common/Bottom";
+import Header from "../Common/Header";
+import ContentList from "./content";
 import LeftArrow from "../../public/assets/LeftArrow";
 import RightArrow from "../../public/assets/RightArrow";
 import Circle from "../Common/Circle";
-import Header from "../Common/Header";
 
-const ServiceGallery: FC = (): JSX.Element => {
-  const List = [1, 2, 3, 4];
+const ReportList: FC = (): JSX.Element => {
+  const List = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   return (
     <S.HomeWrapper>
-      <Header />
       <Circle />
-      <S.Title>서비스 갤러리</S.Title>
+      <Header />
+      <S.Title>리포트</S.Title>
       <S.Selected />
       <S.GalleryBox>
         <S.SelectBox>
@@ -25,13 +25,23 @@ const ServiceGallery: FC = (): JSX.Element => {
             오래된순
           </option>
         </S.SelectBox>
+        <S.Line />
+        <S.ListTitleBox>
+          <S.ListTitle>No.</S.ListTitle>
+          <S.ListTitle>제목</S.ListTitle>
+          <S.ListTitle>위험도</S.ListTitle>
+          <S.ListTitle>작성자</S.ListTitle>
+          <S.ListTitle>작성일지</S.ListTitle>
+        </S.ListTitleBox>
+        <S.DivideLine />
+        {List.map((el, index) => (
+          <ContentList key={index}>{el}</ContentList>
+        ))}
+        <S.BottomLine />
         <S.Box>
-          {List.map((el, index) => (
-            <Gallery key={index}>{el}</Gallery>
-          ))}
+          <S.Search>검색</S.Search>
+          <S.Write>작성하기</S.Write>
         </S.Box>
-        <S.Search placeholder="검색어를 입력해주세요" />
-        <S.Button>검색</S.Button>
         <S.PageNumberDiv>
           <LeftArrow />
           <S.Number>1</S.Number>
@@ -45,4 +55,4 @@ const ServiceGallery: FC = (): JSX.Element => {
   );
 };
 
-export default ServiceGallery;
+export default ReportList;
