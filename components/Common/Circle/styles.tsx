@@ -15,17 +15,17 @@ export const DesignCircleDot = styled.div`
   width: 1200px;
   height: 600px;
   left: 1077px;
-  top: 251px;
+  top: 211px;
   border: 2px dashed #1cb56d;
   transform: rotate(-30deg);
   border-radius: 50%;
 `;
 
 export const DesignCircle2 = styled(DesignCircleDot)`
-  top: 471px;
+  top: 431px;
   border: 1px solid #1cb56d;
 `;
 
 export const DesignCircleDot2 = styled(DesignCircleDot)`
-  top: 691px;
+  top: 651px;
 `;
