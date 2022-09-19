@@ -45,13 +45,13 @@ const NextButtonEnable = styled(S.styledButtonEnable)`
   }
 `;
 
-const Resister_select = () => {
+const UserTerms = () => {
   const [terms1, setTerms1] = useState("");
   const [terms2, setTerms2] = useState("");
 
   const onClick = () => {
     if (terms1 && terms2) {
-      Router.push("/signup/userInput");
+      Router.push("/signup/user/userInput");
     } else {
       alert("약관에 동의해 주세요.");
     }
@@ -72,7 +72,7 @@ const Resister_select = () => {
       <S.scrollBox>
         <ul>
           <li>이용약관</li>
-          <div>
+          <div className="term">
             개인정보보호법에 따라 네이버에 회원가입 신청하시는 분께 수집하는
             개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및
             이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내
@@ -130,7 +130,7 @@ const Resister_select = () => {
             <h3>이용약관에 동의합니다.</h3>
           </div>
           <li>개인정보 수집 빛 이용</li>
-          <div>
+          <div className="term">
             개인정보보호법에 따라 네이버에 회원가입 신청하시는 분께 수집하는
             개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및
             이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내
@@ -201,4 +201,4 @@ const Resister_select = () => {
   );
 };
 
-export default Resister_select;
+export default UserTerms;

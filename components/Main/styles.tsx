@@ -627,12 +627,12 @@ export const TitleBox = styled.div`
   width: 250px;
   height: 40px;
   position: relative;
-  left: 20%;
+  left: 19%;
   @media screen and (max-width: 1800px) {
-    left: 17%;
+    left: 16%;
   }
   @media screen and (max-width: 1600px) {
-    left: 14%;
+    left: 13%;
   }
   @media screen and (max-width: 1440px) {
     left: 9%;
@@ -648,7 +648,7 @@ export const scrollBox = styled.div`
   color: #bbbbbb;
   font-size: 18px;
   font-weight: 400;
-  div {
+  .term {
     margin-top: 10px;
     width: 95%;
     height: 19vh;
@@ -697,4 +697,12 @@ export const scrollBox = styled.div`
       color: #ffffff;
     }
   }
+`;
+
+export const profileBox = styled.div`
+  width: 330px;
+  height: 550px;
+  background-color: red;
+  overflow: hidden;
+  margin: 0 auto;
 `;

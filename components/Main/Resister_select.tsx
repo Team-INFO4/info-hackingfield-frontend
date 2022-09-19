@@ -52,9 +52,9 @@ const Resister_select = () => {
   const onClick = () => {
     console.log(user, " & ", team);
     if (user) {
-      Router.push("/signup/user");
+      Router.push("/signup/user/user");
     } else {
-      Router.push("/signup/team");
+      Router.push("/signup/team/team");
     }
   };
 

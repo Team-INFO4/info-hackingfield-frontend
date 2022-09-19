@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import MainComponent from "../../components/Main/MainComponent";
-import UserTerms from "../../components/Main/user/UserTerms";
-const user = () => {
+import MainComponent from "../../../components/Main/MainComponent";
+import UserProfile from "../../../components/Main/user/UserProfile";
+const userProfile = () => {
   return (
     <Wrapper>
       <MainComponent />
-      <UserTerms />
+      <UserProfile />
     </Wrapper>
   );
 };
@@ -18,4 +18,4 @@ const Wrapper = styled.div`
   background-color: #333333;
 `;
 
-export default user;
+export default userProfile;

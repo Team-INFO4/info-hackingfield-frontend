@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import MainComponent from "../../components/Main/MainComponent";
-import UserInput from "../../components/Main/user/UserInput";
+import MainComponent from "../../../components/Main/MainComponent";
+import UserTerms from "../../../components/Main/user/UserTerms";
 const user = () => {
   return (
     <Wrapper>
       <MainComponent />
-      <UserInput />
+      <UserTerms />
     </Wrapper>
   );
 };
