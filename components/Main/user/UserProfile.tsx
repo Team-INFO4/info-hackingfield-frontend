@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import * as S from "../styles";
-import Link from "next/link";
+import Image from "next/image";
 import Router from "next/router";
 import { IoIosArrowBack } from "react-icons/io";
 import styled from "styled-components";
@@ -75,17 +75,36 @@ const Login = () => {
   const [pwd, setPwd] = useState("");
   const [confirm, setConfirm] = useState("");
 
+  const [Image, setImage] = useState<string>("/images/ImageIcon.svg");
+
   // 유효성 검사
-  const [isEmail, setIsEmail] = useState<boolean>(false);
-  const [isPassword, setIsPassword] = useState<boolean>(false);
-  const [isPasswordConfirm, setIsPasswordConfirm] = useState<boolean>(false);
+
   let btnEnable = false;
+  const fileInput = useRef(null);
+
+  const onChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    } else {
+      //업로드 취소할 시
+      setImage("/images/ImageIcon.svg");
+      return;
+    }
+    //화면에 프로필 사진 표시
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        setImage(reader.result);
+      }
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  };
 
   const onClick = () => {
     Router.push("/");
   };
 
-  if (isEmail && isPassword && isPasswordConfirm) {
+  if (pwd) {
     btnEnable = true;
   } else {
     btnEnable = false;
@@ -107,7 +126,24 @@ const Login = () => {
         <ul>
           <li>프로필 작성</li>
         </ul>
-        <S.profileBox></S.profileBox>
+        <S.profileBox>
+          <S.imageBox>
+            <S.imageIcon>
+              <Image src="/images/ImageIcon.svg" alt="img" layout="fill" />
+            </S.imageIcon>
+            <S.plusIcon>
+              <Image src="/Images/PlusIcone.svg" alt="img" layout="fill" />
+            </S.plusIcon>
+            <input
+              type="file"
+              style={{ display: "none" }}
+              accept="image/jpg,impge/png,image/jpeg"
+              name="profile_img"
+              onChange={onChange}
+              ref={fileInput}
+            />
+          </S.imageBox>
+        </S.profileBox>
       </S.scrollBox>
 
       <PrevButton onClick={() => Router.back()}>이전</PrevButton>

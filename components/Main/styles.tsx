@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import styled, { keyframes } from "styled-components";
 
@@ -686,7 +687,7 @@ export const scrollBox = styled.div`
     color: #555555;
     justify-content: flex-end;
     align-items: center;
-    &: hover {
+    &:hover {
       cursor: pointer;
     }
   }
@@ -702,7 +703,34 @@ export const scrollBox = styled.div`
 export const profileBox = styled.div`
   width: 330px;
   height: 550px;
-  background-color: red;
+  //background-color: red;
   overflow: hidden;
   margin: 0 auto;
+`;
+
+export const imageBox = styled.div`
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  display: flex;
+  background-color: #161b22;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+`;
+
+export const imageIcon = styled.div`
+  width: 32px;
+  height: 32px;
+  position: relative;
+  margin: 0 auto;
+`;
+
+export const plusIcon = styled.div`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  top: 190px;
+  left: 220px;
 `;
