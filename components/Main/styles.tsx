@@ -717,6 +717,16 @@ export const imageBox = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  .InputImage {
+    border-radius: 50%;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  @media screen and (max-height: 1000px) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 export const imageIcon = styled.div`
@@ -731,6 +741,25 @@ export const plusIcon = styled.div`
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  top: 190px;
-  left: 220px;
+  top: 185px;
+  left: 58%;
+
+  @media screen and (max-height: 1000px) {
+    top: 160px;
+  }
+  @media screen and (max-width: 3000px) {
+    left: 58.5%;
+  }
+  @media screen and (max-width: 2000px) {
+    left: 59.2%;
+  }
+
+  @media screen and (max-width: 1200px) and (max-height: 1600px) {
+    top: 185px;
+    left: 220px;
+  }
+  @media screen and (max-width: 1200px) and (max-height: 1000px) {
+    top: 160px;
+    left: 220px;
+  }
 `;

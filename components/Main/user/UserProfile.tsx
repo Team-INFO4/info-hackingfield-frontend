@@ -70,38 +70,39 @@ const NextButtonEnable = styled(S.styledButtonEnable)`
   }
 `;
 
-const Login = () => {
+const UserProfile = () => {
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [confirm, setConfirm] = useState("");
 
-  const [Image, setImage] = useState<string>("/images/ImageIcon.svg");
+  const [imageUrl, setImageUrl] = useState<string>();
+  const imgRef = useRef<HTMLInputElement>(null);
 
   // 유효성 검사
 
   let btnEnable = false;
-  const fileInput = useRef(null);
-
-  const onChange = (e) => {
-    if (e.target.files[0]) {
-      setImage(e.target.files[0]);
-    } else {
-      //업로드 취소할 시
-      setImage("/images/ImageIcon.svg");
-      return;
-    }
-    //화면에 프로필 사진 표시
-    const reader = new FileReader();
-    reader.onload = () => {
-      if (reader.readyState === 2) {
-        setImage(reader.result);
-      }
-    };
-    reader.readAsDataURL(e.target.files[0]);
-  };
 
   const onClick = () => {
     Router.push("/");
+  };
+
+  const onChangeImage = (e) => {
+    const fileBlob = e.target.files[0];
+    if (fileBlob) {
+      const reader = new FileReader();
+      reader.readAsDataURL(fileBlob);
+      return new Promise(() => {
+        reader.onload = () => {
+          setImageUrl(reader.result?.toString());
+        };
+      });
+    }
+  };
+
+  const onClickFileBtn = () => {
+    if (imgRef.current != null) {
+      imgRef.current.click();
+    }
   };
 
   if (pwd) {
@@ -127,20 +128,31 @@ const Login = () => {
           <li>프로필 작성</li>
         </ul>
         <S.profileBox>
-          <S.imageBox>
-            <S.imageIcon>
-              <Image src="/images/ImageIcon.svg" alt="img" layout="fill" />
-            </S.imageIcon>
+          <S.imageBox onClick={onClickFileBtn}>
+            {imageUrl ? (
+              <Image
+                className="InputImage"
+                src={`${imageUrl}`}
+                alt="userp"
+                width={180}
+                height={180}
+                objectFit="cover"
+              />
+            ) : (
+              <S.imageIcon>
+                <Image src="/images/ImageIcon.svg" alt="img" layout="fill" />
+              </S.imageIcon>
+            )}
             <S.plusIcon>
               <Image src="/Images/PlusIcone.svg" alt="img" layout="fill" />
             </S.plusIcon>
             <input
               type="file"
+              ref={imgRef}
               style={{ display: "none" }}
               accept="image/jpg,impge/png,image/jpeg"
               name="profile_img"
-              onChange={onChange}
-              ref={fileInput}
+              onChange={onChangeImage}
             />
           </S.imageBox>
         </S.profileBox>
@@ -158,4 +170,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default UserProfile;
