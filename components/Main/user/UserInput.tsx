@@ -106,7 +106,7 @@ const Login = () => {
     const emailRegex = /[a-z0-9]{2,}@[a-z0-9-]{2,}.[a-z0-9]{2,}/i;
 
     const emailCurrent = e.target.value;
-    setEmail(emailCurrent);
+    setEmail(emailCurrent.replace(/(\s*)/g, ""));
 
     if (!emailRegex.test(emailCurrent)) {
       setIsEmail(false);
@@ -119,7 +119,7 @@ const Login = () => {
     const passwordRegex =
       /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
     const passwordCurrent = e.target.value;
-    setPwd(passwordCurrent);
+    setPwd(passwordCurrent.replace(/(\s*)/g, ""));
 
     if (!passwordRegex.test(passwordCurrent)) {
       setIsPassword(false);
@@ -130,7 +130,7 @@ const Login = () => {
 
   const onChangeConfirm = (e: any) => {
     const passwordConfirmCurrent = e.target.value;
-    setConfirm(passwordConfirmCurrent);
+    setConfirm(passwordConfirmCurrent.replace(/(\s*)/g, ""));
 
     if (pwd === passwordConfirmCurrent) {
       setIsPasswordConfirm(true);
