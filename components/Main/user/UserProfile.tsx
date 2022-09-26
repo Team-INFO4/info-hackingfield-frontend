@@ -5,6 +5,25 @@ import Router from "next/router";
 import { IoIosArrowBack } from "react-icons/io";
 import styled from "styled-components";
 
+const IstyledInput = styled(S.styledInput)`
+  top: 23vh;
+  left: 6vw;
+  position: absolute;
+  width: 17vw;
+  color: #ffffff;
+  ::placeholder {
+    color: #555555;
+  }
+  @media screen and (max-height: 1000px) {
+    top: 27vh;
+    font-size: 15px;
+  }
+
+  &:focus {
+    outline: 2px solid ${(props) => props.color || "#2da16b"};
+  }
+`;
+
 const NextButton = styled(S.styledButton)`
   width: 120px;
   height: 50px;
@@ -71,10 +90,9 @@ const NextButtonEnable = styled(S.styledButtonEnable)`
 `;
 
 const UserProfile = () => {
-  const [email, setEmail] = useState("");
-  const [pwd, setPwd] = useState("");
-  const [confirm, setConfirm] = useState("");
-
+  const [nicName, setNicName] = useState("");
+  const [intro, setIntro] = useState("");
+  const [isNic, setIsNic] = useState<boolean>(false);
   const [imageUrl, setImageUrl] = useState<string>();
   const imgRef = useRef<HTMLInputElement>(null);
 
@@ -105,7 +123,18 @@ const UserProfile = () => {
     }
   };
 
-  if (pwd) {
+  const inputHandling = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const Regex = /^[a-z0-9가-힣-_\s]{2,12}$/;
+    const currentNic = e.target.value;
+    setNicName(currentNic);
+    if (Regex.test(currentNic)) {
+      setIsNic(true);
+    } else {
+      setIsNic(false);
+    }
+  };
+
+  if (nicName) {
     btnEnable = true;
   } else {
     btnEnable = false;
@@ -156,6 +185,14 @@ const UserProfile = () => {
             />
           </S.imageBox>
         </S.profileBox>
+        <IstyledInput
+          type="text"
+          placeholder="닉네임(2~12자)"
+          name="nicname"
+          value={nicName}
+          onChange={inputHandling}
+          color={`${isNic ? "#2da16b" : "#ff0000"}`}
+        />
       </S.scrollBox>
 
       <PrevButton onClick={() => Router.back()}>이전</PrevButton>

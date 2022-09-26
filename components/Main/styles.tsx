@@ -336,7 +336,7 @@ export const LogoBox = styled.div`
 
 export const styledInput = styled.input`
   position: relative;
-  padding-left: 28px;
+  padding: 0 28px 0 28px;
   width: 25vw;
   height: 60px;
   top: 42.5vh;
@@ -763,3 +763,5 @@ export const plusIcon = styled.div`
     left: 220px;
   }
 `;
+
+export const Pwrite = styled.textarea``;
