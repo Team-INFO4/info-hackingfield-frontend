@@ -134,9 +134,10 @@ const UserProfile = () => {
     }
   };
 
-  const introChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setIntro(e.target.value);
-    if (intro) {
+  const introChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const currentIntr = e.target.value;
+    setIntro(currentIntr);
+    if (currentIntr) {
       setIsNic(true);
     } else {
       setIsNic(false);
