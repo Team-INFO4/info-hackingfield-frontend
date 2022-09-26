@@ -15,7 +15,7 @@ const IstyledInput = styled(S.styledInput)`
     color: #555555;
   }
   @media screen and (max-height: 1000px) {
-    top: 27vh;
+    top: 190px;
     font-size: 15px;
   }
 
@@ -134,7 +134,16 @@ const UserProfile = () => {
     }
   };
 
-  if (nicName) {
+  const introChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIntro(e.target.value);
+    if (intro) {
+      setIsNic(true);
+    } else {
+      setIsNic(false);
+    }
+  };
+
+  if (isNic && intro) {
     btnEnable = true;
   } else {
     btnEnable = false;
@@ -192,6 +201,11 @@ const UserProfile = () => {
           value={nicName}
           onChange={inputHandling}
           color={`${isNic ? "#2da16b" : "#ff0000"}`}
+        />
+        <S.Pwrite
+          placeholder="자기소개를 입력하세요"
+          value={intro}
+          onChange={introChange}
         />
       </S.scrollBox>
 

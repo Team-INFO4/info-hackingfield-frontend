@@ -282,6 +282,7 @@ export const BackDiv = styled.div`
   width: 29vw;
   height: 100vh;
   position: fixed;
+  min-height: 770px;
   right: 19vw;
   background: rgba(13, 17, 23, 0.8);
   animation: ${divFade} 2s;
@@ -316,6 +317,9 @@ export const BackDiv = styled.div`
   }
   @media screen and (max-width: 1200px) {
     width: 348px;
+  }
+  @media screen and (max-height: 670px) {
+    position: absolute;
   }
 `;
 
@@ -764,4 +768,28 @@ export const plusIcon = styled.div`
   }
 `;
 
-export const Pwrite = styled.textarea``;
+export const Pwrite = styled.textarea`
+  position: absolute;
+  top: 65%;
+  left: 6vw;
+  padding: 15px;
+  width: 17vw;
+  height: 200px;
+  background-color: #161b22;
+  border: #161b22;
+  color: #ffffff;
+  resize: none;
+  border-radius: 4px;
+  ::placeholder {
+    color: #555555;
+  }
+  &:focus {
+    outline: 2px solid #2da16b;
+  }
+  @media screen and (max-height: 1000px) {
+    top: 280px;
+  }
+  @media screen and (max-height: 800px) {
+    height: 180px;
+  }
+`;
