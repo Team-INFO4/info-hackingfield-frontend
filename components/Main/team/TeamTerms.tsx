@@ -70,13 +70,13 @@ const NextButtonEnable = styled(S.styledButtonEnable)`
   }
 `;
 
-const UserTerms = () => {
+const TeamTerms = () => {
   const [terms1, setTerms1] = useState("");
   const [terms2, setTerms2] = useState("");
 
   const onClick = () => {
     if (terms1 && terms2) {
-      Router.push("/signup/user/userinput");
+      Router.push("/signup/team/teaminput");
     } else {
       alert("약관에 동의해 주세요.");
     }
@@ -92,7 +92,7 @@ const UserTerms = () => {
         />
       </S.arrowBox>
       <S.TitleBox>
-        <h2>USER 회원가입</h2>
+        <h2>TEAM 회원가입</h2>
       </S.TitleBox>
       <S.scrollBox>
         <ul>
@@ -214,6 +214,7 @@ const UserTerms = () => {
           </div>
         </ul>
       </S.scrollBox>
+
       <PrevButton onClick={() => Router.back()}>이전</PrevButton>
       {terms1 === "active" && terms2 === "active" ? (
         <NextButtonEnable onClick={onClick}>다음</NextButtonEnable>
@@ -226,4 +227,4 @@ const UserTerms = () => {
   );
 };
 
-export default UserTerms;
+export default TeamTerms;

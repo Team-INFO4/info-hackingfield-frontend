@@ -50,7 +50,6 @@ const Resister_select = () => {
   const [team, setTeam] = useState(false);
 
   const onClick = () => {
-    console.log(user, " & ", team);
     if (user) {
       Router.push("/signup/user/user");
     } else {

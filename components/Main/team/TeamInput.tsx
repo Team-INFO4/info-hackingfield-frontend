@@ -91,7 +91,7 @@ const NextButtonEnable = styled(S.styledButtonEnable)`
   }
 `;
 
-const UserInput = () => {
+const TeamInput = () => {
   const [email, setEmail] = useState("test@test.com");
   const [pwd, setPwd] = useState("test1234!");
   const [confirm, setConfirm] = useState("test1234!");
@@ -140,7 +140,7 @@ const UserInput = () => {
   };
 
   const onClick = () => {
-    Router.push("/signup/user/userprofile");
+    Router.push("/signup/team/teamprofile");
   };
 
   if (isEmail && isPassword && isPasswordConfirm) {
@@ -159,7 +159,7 @@ const UserInput = () => {
         />
       </S.arrowBox>
       <S.TitleBox>
-        <h2>USER 회원가입</h2>
+        <h2>TEAM 회원가입</h2>
       </S.TitleBox>
       <ul className="sul">
         <li>이메일</li>
@@ -202,4 +202,4 @@ const UserInput = () => {
   );
 };
 
-export default UserInput;
+export default TeamInput;
