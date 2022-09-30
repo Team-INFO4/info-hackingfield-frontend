@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import styled, { keyframes } from "styled-components";
 
@@ -281,16 +282,34 @@ export const BackDiv = styled.div`
   width: 29vw;
   height: 100vh;
   position: fixed;
+  min-height: 770px;
   right: 19vw;
   background: rgba(13, 17, 23, 0.8);
   animation: ${divFade} 2s;
   color: white;
+  .sul {
+    position: absolute;
+    top: 28vh;
+  }
+  li {
+    margin-left: 25px;
+    @media screen and (max-width: 1660px) {
+      margin-left: 13px;
+    }
+    @media screen and (max-width: 1440px) {
+      margin-left: 7px;
+    }
+  }
+
   h2 {
     font-size: 20px;
     font-weight: 500;
     position: absolute;
     top: 48px;
     left: 42%;
+    @media screen and (max-width: 1600px) {
+      top: 42px;
+    }
   }
   h3 {
     font-size: 16px;
@@ -298,6 +317,9 @@ export const BackDiv = styled.div`
   }
   @media screen and (max-width: 1200px) {
     width: 348px;
+  }
+  @media screen and (max-height: 670px) {
+    position: absolute;
   }
 `;
 
@@ -318,7 +340,7 @@ export const LogoBox = styled.div`
 
 export const styledInput = styled.input`
   position: relative;
-  padding-left: 28px;
+  padding: 0 28px 0 28px;
   width: 25vw;
   height: 60px;
   top: 42.5vh;
@@ -337,6 +359,16 @@ export const styledInput = styled.input`
   }
   @media screen and (max-height: 950px) {
     height: 50px;
+  }
+  :-webkit-autofill,
+  :-webkit-autofill:hover,
+  :-webkit-autofill:focus,
+  :-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-transition: background-color 9999s ease-out;
+    -webkit-box-shadow: 0 0 0px 1000px #161b22 inset !important;
+    box-shadow: 0 0 0px #161b22 inset !important;
+    -webkit-text-fill-color: #555555 !important;
   }
 `;
 
@@ -424,7 +456,17 @@ export const arrowBox = styled.div`
     &:hover {
       color: #1cb56d;
     }
+
+    @media screen and (max-width: 1600px) {
+      width: 35px;
+      height: 35px;
+    }
+    @media screen and (max-width: 1440px) {
+      width: 30px;
+      height: 30px;
+    }
   }
+  cursor: pointer;
 `;
 
 export const SelectDiv = styled.div`
@@ -434,85 +476,98 @@ export const SelectDiv = styled.div`
   align-items: center;
   width: 27vw;
   height: 260px;
-  background-color: red;
   margin: 0 auto;
   top: 36vh;
   @media screen and (max-width: 1200px) {
     width: 330px;
   }
-`;
 
-export const userBox = styled.div`
-  position: relative;
-  width: 232px;
-  height: 232px;
-  background: #161b22;
-  border-radius: 26px;
-  &:hover {
-    background-color: #1e2329;
-    cursor: pointer;
+  .btn {
+    position: relative;
+    width: 232px;
+    height: 232px;
+    background-color: #161b22;
+    border-radius: 26px;
+    &:hover {
+      background-color: #1e2329;
+      cursor: pointer;
+      .Icon {
+        filter: grayscale(0%) !important;
+      }
+      h3 {
+        opacity: 1;
+      }
+      p {
+        opacity: 1;
+      }
+    }
+
+    h3 {
+      position: relative;
+      font-weight: 500;
+      font-size: 18px;
+      top: 40px;
+      left: 38%;
+      opacity: 0.5;
+    }
+
+    p {
+      position: relative;
+      font-weight: 500;
+      font-size: 18px;
+      top: 35px;
+      left: 38%;
+      opacity: 0.5;
+    }
+    @media screen and (max-width: 1800px) {
+      width: 200px;
+      height: 200px;
+      h3 {
+        top: 30px;
+        left: 76px;
+      }
+      p {
+        top: 11px;
+      }
+    }
+    @media screen and (max-width: 1600px) {
+      width: 180px;
+      height: 180px;
+      h3 {
+        top: 20px;
+        left: 66px;
+      }
+      p {
+        top: -10px;
+        left: 36%;
+      }
+    }
+    @media screen and (max-width: 1440px) {
+      width: 150px;
+      height: 150px;
+      h3 {
+        top: 15px;
+        left: 53px;
+        font-size: 16px;
+      }
+      p {
+        top: -25px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .btn.active {
+    background-color: #1cb56d;
+    h3 {
+      opacity: 1;
+    }
+    p {
+      opacity: 1;
+    }
     .Icon {
       filter: grayscale(0%) !important;
-    }
-    h3 {
-      opacity: 1;
-    }
-    p {
-      opacity: 1;
-    }
-  }
-
-  h3 {
-    position: relative;
-    font-weight: 500;
-    font-size: 18px;
-    top: 40px;
-    left: 38%;
-    opacity: 0.5;
-  }
-
-  p {
-    position: relative;
-    font-weight: 500;
-    font-size: 18px;
-    top: 35px;
-    left: 38%;
-    opacity: 0.5;
-  }
-  @media screen and (max-width: 1800px) {
-    width: 200px;
-    height: 200px;
-    h3 {
-      top: 30px;
-      left: 76px;
-    }
-    p {
-      top: 11px;
-    }
-  }
-  @media screen and (max-width: 1600px) {
-    width: 180px;
-    height: 180px;
-    h3 {
-      top: 20px;
-      left: 66px;
-    }
-    p {
-      top: -10px;
-      left: 36%;
-    }
-  }
-  @media screen and (max-width: 1440px) {
-    width: 150px;
-    height: 150px;
-    h3 {
-      top: 15px;
-      left: 53px;
-      font-size: 16px;
-    }
-    p {
-      top: -25px;
-      font-size: 16px;
+      opacity: 1 !important;
     }
   }
 `;
@@ -567,5 +622,174 @@ export const teamImage = styled.div`
   @media screen and (max-width: 1440px) {
     top: 20px;
     width: 130px;
+  }
+`;
+
+/* 
+  이용약관
+  */
+export const TitleBox = styled.div`
+  width: 250px;
+  height: 40px;
+  position: relative;
+  left: 19%;
+  @media screen and (max-width: 1800px) {
+    left: 16%;
+  }
+  @media screen and (max-width: 1600px) {
+    left: 13%;
+  }
+  @media screen and (max-width: 1440px) {
+    left: 9%;
+    top: -3px;
+  }
+`;
+
+export const scrollBox = styled.div`
+  position: relative;
+  width: 100%;
+  height: 50%;
+  top: 18%;
+  color: #bbbbbb;
+  font-size: 18px;
+  font-weight: 400;
+  .term {
+    margin-top: 10px;
+    width: 95%;
+    height: 19vh;
+    background-color: #161b22;
+    border-radius: 4px;
+    padding: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+    font-size: 15px;
+  }
+  h3 {
+    position: relative;
+    margin: 0 25px 0 10px;
+    display: inline-block;
+  }
+  @media screen and (max-width: 1440px) {
+    font-size: 16px;
+    div {
+      font-size: 13px;
+    }
+    h3 {
+      font-size: 14px;
+    }
+  }
+  @media screen and (max-height: 1000px) {
+    top: 15%;
+  }
+
+  .btn {
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(13, 17, 23, 0);
+    height: 40px;
+    display: flex;
+    color: #555555;
+    justify-content: flex-end;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .btn.active {
+    color: #1cb56d;
+    h3 {
+      color: #ffffff;
+    }
+  }
+`;
+
+export const profileBox = styled.div`
+  width: 330px;
+  height: 550px;
+  //background-color: red;
+  overflow: hidden;
+  margin: 0 auto;
+`;
+
+export const imageBox = styled.div`
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  display: flex;
+  background-color: #161b22;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  .InputImage {
+    border-radius: 50%;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  @media screen and (max-height: 1000px) {
+    width: 150px;
+    height: 150px;
+  }
+`;
+
+export const imageIcon = styled.div`
+  width: 32px;
+  height: 32px;
+  position: relative;
+  margin: 0 auto;
+`;
+
+export const plusIcon = styled.div`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  top: 185px;
+  left: 58%;
+
+  @media screen and (max-height: 1000px) {
+    top: 160px;
+  }
+  @media screen and (max-width: 3000px) {
+    left: 58.5%;
+  }
+  @media screen and (max-width: 2000px) {
+    left: 59.2%;
+  }
+
+  @media screen and (max-width: 1200px) and (max-height: 1600px) {
+    top: 185px;
+    left: 220px;
+  }
+  @media screen and (max-width: 1200px) and (max-height: 1000px) {
+    top: 160px;
+    left: 220px;
+  }
+`;
+
+export const Pwrite = styled.textarea`
+  position: absolute;
+  top: 65%;
+  left: 6vw;
+  padding: 15px;
+  width: 17vw;
+  height: 200px;
+  background-color: #161b22;
+  border: #161b22;
+  color: #ffffff;
+  resize: none;
+  border-radius: 4px;
+  ::placeholder {
+    color: #555555;
+  }
+  &:focus {
+    outline: 2px solid #2da16b;
+  }
+  @media screen and (max-height: 1000px) {
+    top: 280px;
+  }
+  @media screen and (max-height: 800px) {
+    height: 180px;
   }
 `;

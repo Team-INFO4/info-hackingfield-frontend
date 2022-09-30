@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import MainComponent from "../../components/Main/MainComponent";
-import Login from "../../components/Main/Login";
-import Resister_select from "../../components/Main/Resister_select";
+import MainComponent from "../../../components/Main/MainComponent";
+import TeamTerms from "../../../components/Main/team/TeamTerms";
 
-const common = () => {
+const team = () => {
   return (
     <Wrapper>
       <MainComponent />
-      <Resister_select />
+      <TeamTerms />
     </Wrapper>
   );
 };
@@ -20,4 +19,4 @@ const Wrapper = styled.div`
   background-color: #333333;
 `;
 
-export default common;
+export default team;
