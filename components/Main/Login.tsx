@@ -42,7 +42,10 @@ const Login = () => {
       )}
 
       <S.textBox>
-        <h3>비밀번호 찾기</h3>
+        <Link href="/find/emailauth" passHref>
+          <h3>비밀번호 찾기</h3>
+        </Link>
+
         <Link href="/signup/common" passHref>
           <h3>회원가입</h3>
         </Link>
