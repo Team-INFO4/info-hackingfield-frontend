@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import MainComponent from "../../components/Main/MainComponent";
-import PasswordReset from "../../components/Main/PasswordReset";
+import MainComponent from "../../../components/Main/MainComponent";
+import PasswordReset from "../../../components/Main/PasswordReset";
 
 const passwordReset = () => {
   return (

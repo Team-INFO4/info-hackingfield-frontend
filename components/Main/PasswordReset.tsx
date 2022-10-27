@@ -5,10 +5,12 @@ import { IoIosArrowBack } from "react-icons/io";
 import styled from "styled-components";
 
 const IstyledInput = styled(S.styledInput)`
-  top: 37vh;
+  top: 28vh;
   margin-left: 15px;
   @media screen and (max-height: 950px) {
-    height: 60px;
+  }
+  &:focus {
+    outline: 2px solid ${(props) => props.color || "#2da16b"};
   }
 `;
 
@@ -28,20 +30,33 @@ const IstyledButtonEnable = styled(S.styledButtonEnable)`
   }
 `;
 
-const EmailAuth = () => {
-  const [email, setEmail] = useState("");
-  const [isEmail, setIsEmail] = useState<boolean>(false);
+const PasswordReset = () => {
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [isPassword, setIsPassword] = useState<boolean>(false);
+  const [isPasswordConfirm, setIsPasswordConfirm] = useState<boolean>(false);
 
-  const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const emailRegex = /[a-z0-9]{2,}@[a-z0-9-]{2,}.[a-z0-9]{2,}/i;
+  const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const passwordRegex =
+      /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
+    const passwordCurrent = e.target.value;
+    setPassword(passwordCurrent.replace(/(\s*)/g, ""));
 
-    const emailCurrent = e.target.value;
-    setEmail(emailCurrent.replace(/(\s*)/g, ""));
-
-    if (!emailRegex.test(emailCurrent)) {
-      setIsEmail(false);
+    if (!passwordRegex.test(passwordCurrent)) {
+      setIsPassword(false);
     } else {
-      setIsEmail(true);
+      setIsPassword(true);
+    }
+  };
+
+  const onChangeConfirm = (e: any) => {
+    const passwordConfirmCurrent = e.target.value;
+    setConfirm(passwordConfirmCurrent.replace(/(\s*)/g, ""));
+
+    if (password === passwordConfirmCurrent) {
+      setIsPasswordConfirm(true);
+    } else {
+      setIsPasswordConfirm(false);
     }
   };
 
@@ -51,10 +66,10 @@ const EmailAuth = () => {
 
   let btnEnable = false;
 
-  if (!isEmail) {
-    btnEnable = false;
-  } else {
+  if (isPassword && isPasswordConfirm) {
     btnEnable = true;
+  } else {
+    btnEnable = false;
   }
 
   return (
@@ -67,18 +82,26 @@ const EmailAuth = () => {
         />
       </S.arrowBox>
       <S.TitleBox>
-        <h2>비밀번호 찾기</h2>
+        <h2>비밀번호 재설정</h2>
       </S.TitleBox>
       <IstyledInput
-        type="text"
-        placeholder="이메일 입력"
-        name="email"
-        onChange={onChangeEmail}
+        color={`${isPassword ? "#2da16b" : "#ff0000"}`}
+        type="password"
+        placeholder="새 비밀번호"
+        name="password"
+        onChange={onChangePassword}
+      />
+      <IstyledInput
+        color={`${isPasswordConfirm ? "#2da16b" : "#ff0000"}`}
+        type="password"
+        placeholder="비밀번호 확인"
+        name="confirm"
+        onChange={onChangeConfirm}
       />
       {btnEnable ? (
         <IstyledButtonEnable onClick={onClick}>전송하기</IstyledButtonEnable>
       ) : (
-        <IstyledButton onClick={() => alert("이메일을 입력해 주세요.")}>
+        <IstyledButton onClick={() => alert("비밀번호를 확인해주세요.")}>
           전송하기
         </IstyledButton>
       )}
@@ -86,4 +109,4 @@ const EmailAuth = () => {
   );
 };
 
-export default EmailAuth;
+export default PasswordReset;
