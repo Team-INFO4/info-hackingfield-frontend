@@ -37,12 +37,149 @@ export const TopRank = styled.div`
 export const Top = styled.div`
   width: 180px;
   margin-top: -20px;
+  margin-left: 24px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
+  text-align: center;
 `;
 
 export const second = styled.div`
   width: 180px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 16px;
+  text-align: center;
+`;
+
+export const rank = styled.div`
+  width: 1180px;
+  display: flex;
+  margin: 0 auto;
+`;
+
+export const crown = styled.div`
+  width: 24px;
+  height: 24px;
+  background: url("/images/crown.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 64px;
+  margin-top: -30%;
+  margin-bottom: 20px;
+`;
+
+export const nickname = styled.div`
+  width: 56px;
+  height: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  color: #ffffff;
+  margin-left: 54px;
+  margin-top: 16px;
+`;
+
+export const report = styled.div`
+  width: 170px;
+  height: 70px;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff;
+`;
+
+export const divideRank = styled.div`
+  width: 1140px;
+  border: 1px solid #555555;
+  margin-top: 80px;
+`;
+export const GalleryBox = styled.div`
+  position: relative;
+  width: 1180px;
+  margin: 0 auto;
+`;
+
+export const Line = styled.div`
+  width: 1180px;
+  background: #ffffff;
+  border: 1px solid #555555;
+  margin-top: 80px;
+`;
+
+export const DivideLine = styled(Line)`
+  margin-top: 5px;
+`;
+
+export const BottomLine = styled(Line)`
+  margin-top: 0;
+  margin-bottom: 150px;
+`;
+
+export const Div = styled.div`
+  width: 100%;
+  background-color: #0d1117;
+`;
+
+export const ContentBox = styled.div`
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  display: inline-grid;
+  grid-template-columns: 5% 10% 40% 15% 15% 15%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+`;
+
+export const GrayTitle = styled.div`
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: #bbbbbb;
+`;
+
+export const WhiteTitle = styled.div`
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff;
+  text-overflow: ellipsis;
+`;
+
+export const ContentDivide = styled.div`
+  width: 1180px;
+  border: 1px solid #555555;
+`;
+
+export const Box = styled.div`
+  width: 1180px;
+  height: 60px;
+  margin-top: 16px;
+`;
+
+export const Search = styled.button`
+  width: 80px;
+  height: 40px;
+  background: #1cb56d;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #ffffff;
+  margin-left: 400px;
+`;
+
+export const PageNumberDiv = styled.div`
+  width: 160px;
+  height: 26px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 82px auto 124px auto;
+`;
+
+export const Number = styled.div`
+  width: 12px;
+  height: 26px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
 `;
